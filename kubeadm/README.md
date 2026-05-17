@@ -42,3 +42,15 @@ kubectl get deployment -n nginx
 
 # To get job
 kubectl get job -n nginx
+
+# To get persistentVolume
+kubectl get pv
+
+# To delete persistent volume
+kubectl delete pv <local-pv>
+
+# To get persistentVolumeClaim
+kubectl get pvc
+
+# To delete persistent volume claim
+kubectl delete pvc <local-pvc>
