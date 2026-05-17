@@ -22,9 +22,9 @@ spec:
         # Added persistent volume for data backup
         volumeMounts:
         - mountPath: /var/www/html
-          name: myVolume
+          name: my-volume
       volumes:
-        name: nginx-volume
-        pesrsistentVolumeClaim:
+      - name: my-volume
+        persistentVolumeClaim:
           # This name should be persistent volume claim name
           claimName: local-pvc
