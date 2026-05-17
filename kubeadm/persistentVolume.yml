@@ -11,4 +11,5 @@ metadata:
     - ReadWriteOnce
     persistentVolumeReclaimPolicy: Retain
     storageClassName: local-storage
-    path: /mnt/data
+    hostPath:
+      path: /mnt/data
