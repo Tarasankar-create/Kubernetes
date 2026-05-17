@@ -54,3 +54,15 @@ kubectl get pvc
 
 # To delete persistent volume claim
 kubectl delete pvc <local-pvc>
+
+# To get all
+kubectl get all
+
+# To port forward for accessing port of a container 
+#In local
+kubectl port-forward service/nginx-service -n nginx 80:80 --address=0.0.0.0
+# 80:80 (runs on the browser : container Port)
+#In EC2
+sudo -E kubectl port-forward service/nginx-service -n nginx 80:80 --address=0.0.0.0
+# For sudo -E it run that command in an environment
+
