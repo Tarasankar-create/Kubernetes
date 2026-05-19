@@ -1,0 +1,30 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: django-deployment
+  namespace: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: django
+  template:
+    metadata:
+      name: django-dep-pod
+      labels:
+        app: django
+    spec:
+      containers:
+      - name: django-container
+        image: tarasankar393/django-app
+        ports:
+        - containerPort: 80
+        # Added persistent volume for data backup
+        volumeMounts:
+        - mountPath: /var/www/html
+          name: my-volume
+      volumes:
+      - name: my-volume
+        persistentVolumeClaim:
+          # This name should be persistent volume claim name
+          claimName: local-pvc
