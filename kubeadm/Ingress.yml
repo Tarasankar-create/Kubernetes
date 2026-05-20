@@ -18,6 +18,6 @@ spec:
       path: /app
       backend:
         service:
-          name: djjango-app-service
+          name: django-app-service
           port: 
             number: 8000
