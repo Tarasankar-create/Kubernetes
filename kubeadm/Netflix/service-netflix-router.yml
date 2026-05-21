@@ -2,7 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: nginx-app
-  namespace: netflix-app
+  namespace: nginx
 spec:
   selector:
     app: netflix
