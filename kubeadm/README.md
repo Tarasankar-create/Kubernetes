@@ -69,3 +69,7 @@ sudo -E kubectl port-forward service/nginx-service -n nginx 80:80 --address=0.0.
 # Ingress-controller
 kubectl apply -f https://kind.sigs.k8s.io/examples/ingress/usage.yaml
 
+# To run port forward in ingress
+kubectl port-forward services/ingress-nginx-controller -n ingress-nginx  9090:80 --address=0.0.0.0
+
+
