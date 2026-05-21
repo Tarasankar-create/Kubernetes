@@ -3,21 +3,27 @@ kind: Ingress
 metadata:
   name: nginx-ingress
   namespace: nginx
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+
 spec:
+  ingressClassName: nginx
+
   rules:
   - http:
       paths:
-      - pathType: Prefix
-        path: /nginx
+      - path: /nginx
+        pathType: Prefix
         backend:
           service:
             name: nginx-service
-            port: 
+            port:
               number: 80
-      - pathType: Prefix
-        path: /app
+
+      - path: /
+        pathType: Prefix
         backend:
           service:
             name: django-app-service
-            port: 
+            port:
               number: 8000
