@@ -4,6 +4,7 @@ metadata:
   name: mysql-statefulset
   namespace: mysql
 spec:
+  serviceName: mysql-service
   replicas: 3
   selector:
     matchLabels:
