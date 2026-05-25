@@ -23,7 +23,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: nginx-app
+            name: react-app
             port:
               number: 80
       - path: /django
