@@ -3,3 +3,6 @@ kubectl get nodes --context kind-tws-cluster
 
 # To return kind cluster
 kubectl config use-context kind-tws-cluster
+
+#To craete nodes
+minikube start --driver=docker --nodes=3
