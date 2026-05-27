@@ -17,14 +17,14 @@ spec:
       containers:
       - name: mysql
         image: mysql:8.0
-        port:
+        ports:
         - containerPort: 3306
         env:
         - name: MYSQL_ROOT_PASSWORD
-           valueFrom:
-             secretKeyRef:
-               name: mysql-Secret
-               key: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-Secret
+              key: MYSQL_ROOT_PASSWORD
         - name: MYSQL_DATABASE
           valueFrom:
             configMapKeyRef:
@@ -34,11 +34,10 @@ spec:
         - name: mysql-data
           mountPath: /var/lib/mysql
   volumeClaimTemplates:
-  - meta-data:
+  - metadata:
       name: mysql-data
     spec:
       accessModes: [ "ReadWriteOnce" ]
       resources:
         requests:
           storage: 1Gi
-  
