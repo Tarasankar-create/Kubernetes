@@ -19,6 +19,18 @@ spec:
         image: nginx:latest
         ports:
         - containerPort: 80
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+        # To specify how much cpu and ram it takes and what should be the maximum it takes
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128mi
+          limits:
+            cpu: 200m
+            memory: 256mi
         # Added persistent volume for data backup
         volumeMounts:
         - mountPath: /var/www/html
