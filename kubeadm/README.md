@@ -75,4 +75,9 @@ kubectl port-forward services/ingress-nginx-controller -n ingress-nginx  9090:80
 # To create encrypted password
 echo "password" | base64
 
+# To apply taint to a node
+kubectl taint node <nodeName> prod=true:NoSchedule
+#prod means production is true reason for doing taint
 
+# To remove taint
+kubectl taint node <nodeName> prod=true:NoSchedule-
