@@ -1,8 +1,8 @@
 # To create nameSpace
-kubectl create namespace <your-namespace-name>
+kubectl create namespace --your-namespace-name--
 
 # To describe details of a pod
-kubectl describe pods/<podName> -n <namespaceName>
+kubectl describe pods/--podName-- -n --namespaceName--
 
 # To enter into the shell of a container
 kubectl exec -it nginx-pod -n nginx -- bash
@@ -47,13 +47,13 @@ kubectl get job -n nginx
 kubectl get pv
 
 # To delete persistent volume
-kubectl delete pv <local-pv>
+kubectl delete pv --local-pv--
 
 # To get persistentVolumeClaim
 kubectl get pvc
 
 # To delete persistent volume claim
-kubectl delete pvc <local-pvc>
+kubectl delete pvc --local-pvc--
 
 # To get all
 kubectl get all
@@ -76,7 +76,7 @@ kubectl port-forward services/ingress-nginx-controller -n ingress-nginx  9090:80
 echo "password" | base64
 
 # To apply taint to a node
-kubectl taint node <nodeName> prod=true:NoSchedule
+kubectl taint node --nodeName-- prod=true:NoSchedule
 #prod means production is true reason for doing taint
 
 # To remove taint
