@@ -81,3 +81,11 @@ kubectl taint node --nodeName-- prod=true:NoSchedule
 
 # To remove taint
 kubectl taint node <nodeName> prod=true:NoSchedule-
+
+# To avoid taint
+add this to code in container scope
+tolerations:
+      - key: "prod"
+        operator: "Equal"
+        value: "true"
+        effect: "NoSchedule"
