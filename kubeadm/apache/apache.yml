@@ -11,6 +11,8 @@ spec:
   template:
     metadata:
       name: apache
+      labels:
+        app: apache
   spec:
     containers:
     - name: apache
