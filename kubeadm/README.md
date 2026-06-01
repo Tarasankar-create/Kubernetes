@@ -89,3 +89,6 @@ tolerations:
         operator: "Equal"
         value: "true"
         effect: "NoSchedule"
+
+# To run port-forward in background
+kubectl port-forward service/nginx-service -n nginx 80:80 --address=0.0.0.0 &
