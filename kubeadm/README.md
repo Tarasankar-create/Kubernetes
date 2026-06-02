@@ -92,3 +92,7 @@ tolerations:
 
 # To run port-forward in background
 kubectl port-forward service/nginx-service -n nginx 80:80 --address=0.0.0.0 &
+
+# To install vpa
+git clone https://github.com/kubernetes/autoscaler.git
+./hack/vpa-up.sh
