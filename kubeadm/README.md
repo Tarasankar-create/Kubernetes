@@ -96,3 +96,8 @@ kubectl port-forward service/nginx-service -n nginx 80:80 --address=0.0.0.0 &
 # To install vpa
 git clone https://github.com/kubernetes/autoscaler.git
 ./hack/vpa-up.sh
+
+# TO create load-generator
+kubectl run -i -tty load-generator --image=busybox -n apache /bin/sh
+->
+  while True; do wget -q -O- https://apache-service.apache.svc.cluster.local; done
