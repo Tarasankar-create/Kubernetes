@@ -108,3 +108,11 @@ kubectl edit deployment metrics-server -n kube-system
   ADD
   - --kubelet-insecure-tls
 kubectl rollout restart deployment metrics-server -n kube-system
+
+# To see the user 
+kubectl auth whoami
+
+# To use command in rback
+kubectl auth can-i get deployment -n apache
+
+kubectl auth can-i delete deployment -n apache
