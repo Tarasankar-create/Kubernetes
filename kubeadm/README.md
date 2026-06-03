@@ -101,3 +101,10 @@ git clone https://github.com/kubernetes/autoscaler.git
 kubectl run -i -tty load-generator --image=busybox -n apache /bin/sh
 ->
   while True; do wget -q -O- https://apache-service.apache.svc.cluster.local; done
+
+# To install metrices
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+kubectl edit deployment metrics-server -n kube-system
+  ADD
+  - --kubelet-insecure-tls
+kubectl rollout restart deployment metrics-server -n kube-system
