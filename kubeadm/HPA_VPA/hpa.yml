@@ -2,11 +2,12 @@ apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: apache-hpa
+  namespace: apache
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: apache-deployment
+    name: apache-server
   minReplicas: 1
   maxReplicas: 5
   metrics:
