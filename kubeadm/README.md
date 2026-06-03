@@ -116,3 +116,6 @@ kubectl auth whoami
 kubectl auth can-i get deployment -n apache
 
 kubectl auth can-i delete deployment -n apache
+
+# Tlo get service account
+kubectl get serviceaccount -n apache
