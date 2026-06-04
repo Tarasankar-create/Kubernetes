@@ -98,9 +98,9 @@ git clone https://github.com/kubernetes/autoscaler.git
 ./hack/vpa-up.sh
 
 # TO create load-generator
-kubectl run -i -tty load-generator --image=busybox -n apache /bin/sh
+kubectl run -i -t load-generator --image=busybox -n apache -- /bin/sh
 ->
-  while True; do wget -q -O- https://apache-service.apache.svc.cluster.local; done
+  while true; do wget -q -O- http://apache-service.apache.svc.cluster.local; done
 
 # To install metrices
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
