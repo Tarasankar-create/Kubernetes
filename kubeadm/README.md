@@ -129,6 +129,9 @@ kubectl get serviceaccount -n apache
 # To get pods as an user
 kubectl auth can-i get pods -n apache --as=apache-user
 
+# TO deploy dashboard
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+
 # To create token for kubernate dashboard
 kubectl -n kubernetes-dashboard create token admin-user
 
