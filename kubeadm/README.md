@@ -119,3 +119,12 @@ kubectl auth can-i delete deployment -n apache
 
 # Tlo get service account
 kubectl get serviceaccount -n apache
+
+# To get role
+kubectl get role -n apache
+
+# To get service account
+kubectl get serviceaccount -n apache
+
+# To get pods as an user
+kubectl auth can-i get pods -n apache --as=apache-user
