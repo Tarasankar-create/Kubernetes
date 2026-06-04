@@ -128,3 +128,12 @@ kubectl get serviceaccount -n apache
 
 # To get pods as an user
 kubectl auth can-i get pods -n apache --as=apache-user
+
+# To create token for kubernate dashboard
+kubectl -n kubernetes-dashboard create token admin-user
+
+# To run port forward for dashboard
+kubectl proxy --address="0.0.0.0" --port=8001 --accept-hosts=".*"
+
+# To access the dashboard
+http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login
