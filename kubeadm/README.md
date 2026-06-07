@@ -151,3 +151,6 @@ helm create (chartname) i.e, apache-helm
 # To change any file values of deployment, service and .. change it on values.yaml it auto changes it from all files
 # To package it 
   helm package apache-helm/
+
+# To install package
+helm install fileName apache-helm
