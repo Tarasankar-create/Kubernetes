@@ -140,3 +140,14 @@ kubectl proxy --address="0.0.0.0" --port=8001 --accept-hosts=".*"
 
 # To access the dashboard
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login
+
+# TO create helm chart
+helm create (chartname) i.e, apache-helm
+
+# To see the files of helm chart in a structured manner
+-> install tree
+   sudo apt install tree
+
+# To change any file values of deployment, service and .. change it on values.yaml it auto changes it from all files
+# To package it 
+  helm package apache-helm/
