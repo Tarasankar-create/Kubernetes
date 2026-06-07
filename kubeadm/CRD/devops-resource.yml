@@ -1,0 +1,9 @@
+Kind: Devopsbatch
+apiVersion: mygrp.com/v1
+metadata:
+  name: devops
+spec:
+  name: welcome
+  duration: This is duration resource
+  mode: This is mode
+  platform: This is platform
