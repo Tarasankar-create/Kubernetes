@@ -1,4 +1,4 @@
-Kind: Devopsbatch
+kind: Devopsbatch
 apiVersion: mygrp.com/v1
 metadata:
   name: devops
