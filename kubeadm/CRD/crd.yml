@@ -24,13 +24,13 @@ spec:
             properties:
               name:
                 type: string
-                description: This is name
+                description: "This is name"
               duration:
                 type: string
-                description: This is duration
+                description: "This is duration"
               mode:
                 type: string
-                description: This is mode
+                description: "This is mode"
               platform:
                 type: string
-                description: This is platform
+                description: "This is platform"
