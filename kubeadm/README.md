@@ -154,3 +154,20 @@ helm create (chartname) i.e, apache-helm
 
 # To install package
 helm install fileName apache-helm
+
+# TO uninstall or remove package
+helm uninstall packageName
+
+# To install in package in particular namespace
+helm install nginxhelm nginx-helm -n nginx --create-namespace
+
+# To upgrade any package 
+-> edit in values.yaml
+-> Create package
+-> helm upgrade nginxhelm nginx-helm -n nginx
+
+# To rollback previous revision
+ helm rollback nginxhelm 1 -n nginx
+  -> 1 is the revision which is mentioned when install package, You can move to that stage by applying revision number
+# In helm chart.yaml you can upgrade the version everytime you ugrade your app
+
