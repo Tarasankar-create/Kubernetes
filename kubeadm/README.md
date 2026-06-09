@@ -171,3 +171,12 @@ helm install nginxhelm nginx-helm -n nginx --create-namespace
   -> 1 is the revision which is mentioned when install package, You can move to that stage by applying revision number
 # In helm chart.yaml you can upgrade the version everytime you ugrade your app
 
+# To install istio directly
+kind create cluster --name istio-testing
+
+# To download istio
+-> curl -L https://istio.io/downloadIstio | sh -
+-> sudo mv istioctl /usr/local/bin
+
+
+
