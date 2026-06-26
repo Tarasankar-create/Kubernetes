@@ -50,3 +50,14 @@ $TTL 2d    ; default TTL for zone
 ; name server RR for the domain
            IN      NS      ns1.example.com.
 www        IN      A       192.168.254.7
+
+```bash
+sudo systemctl restart named
+```
+
+# Add in /etc/resolve.conf
+To target our dns server
+```
+search localdomain
+nameserver < your ip value >
+```
