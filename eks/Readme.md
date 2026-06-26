@@ -9,3 +9,8 @@ We can also provide
 
 To delete cluster
 eks delete cluster --name my-cluster
+
+
+To domain bind
+# sudo apt install bind bind-utils
+  sudo systemctl start/stop/status named (named is the process or service name)
