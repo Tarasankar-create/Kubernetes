@@ -37,3 +37,16 @@ zone ""IN{
 named-checkconf
 ```
 # create mywebapp.com.fzone file in /var/named
+# Write in this 
+```bash
+$TTL 2d    ; default TTL for zone
+@         IN      SOA   ns1.example.com. hostmaster.example.com. (
+                                2003080800 ; serial number
+                                12h        ; refresh
+                                15m        ; update retry
+                                4d         ; expiry
+                                2h         ; minimum
+                                )
+; name server RR for the domain
+           IN      NS      ns1.example.com.
+www        IN      A       192.168.254.7
