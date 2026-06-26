@@ -26,7 +26,7 @@ Edit config file
 --> add your ip in listen on port 53 in connfig file
 Add after the zone in config file
 ```bash
-zone ""IN{
+zone "www.yourweb.com " IN{
   type master;
   file "mywebapp.com.fzone";
   allow-query{any; };
