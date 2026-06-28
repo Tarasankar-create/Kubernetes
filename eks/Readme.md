@@ -12,8 +12,12 @@ eks delete cluster --name my-cluster
 
 DNS BINDING
 To domain bind
-# sudo apt install bind bind-utils
-# sudo systemctl start/stop/status named (named is the process or service name)
+```bash
+apt update
+apt install bind9 dnsutils
+apt update
+apt install dnsutils
+```
 
 Enable in firewall
 ```bash
@@ -22,14 +26,29 @@ firewall-cmd --reload
 ```
 
 Edit config file
-# vi /etc/named.conf
---> add your ip in listen on port 53 in connfig file
-Add after the zone in config file
+/etc/bind/named.conf.options
+Add your global options here:
 ```bash
-zone "www.yourweb.com " IN{
-  type master;
-  file "mywebapp.com.fzone";
-  allow-query{any; };
+options {
+    directory "/var/cache/bind";
+
+    listen-on port 53 { any; };
+    listen-on-v6 { any; };
+
+    allow-query { any; };
+
+    recursion yes;
+
+    dnssec-validation auto;
+};
+```
+ /etc/bind/named.conf.local
+ Add your custom zone here:
+ ```bash
+zone "mywebapp.com" IN {
+    type master;
+    file "/etc/bind/mywebapp.com.fzone";
+    allow-query { any; };
 };
 ```
 # To check confirm changes
