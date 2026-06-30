@@ -210,3 +210,24 @@ istioctl dashboard kiali
 
 # TO request 100 times
 for i in {1..100}; do   curl http://3.111.218.170:8080/productpage; done
+
+To run port-forward in background use tmux
+on ec2
+```bash
+sudo apt install tmux -y
+tmux new -s k8s
+```
+Start kind + port-forward inside tmux:
+```bash
+kubectl port-forward svc/my-service 8080:80
+```
+Detach safely:
+```bash
+Ctrl + B, then D
+```
+Now even if SSH freezes/disconnects, everything keeps running.
+
+If Reconnecting needed:
+```bash
+tmux attach -t k8s
+```
